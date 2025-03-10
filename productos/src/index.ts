@@ -14,6 +14,8 @@ app.use(express.json());
 // Definir las rutas del servicio de productos
 app.use("/api/productos", productosRoutes);
 
+const PRODUCTS_SERVICE = process.env.PRODUCTS_SERVICE || "http://172.27.131.169:4000/api/productos";
+
 // Iniciar el servidor en todas las interfaces para acceso externo
 const PORT = parseInt(process.env.PORT || "4000", 10);
 app.listen(PORT, "0.0.0.0", () => {

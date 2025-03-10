@@ -1,11 +1,12 @@
 import mysql from 'mysql2'
 
 const connection = mysql.createConnection({
-    host: process.env.HOST || 'localhost',
-    user: process.env.USER || 'root',
-    password: process.env.PASSWORD || '',
-    database: process.env.DB || 'Taller4O'
+    host: process.env.DB_HOST || 'localhost',
+    user: process.env.DB_USER || 'root',
+    password: process.env.DB_PASSWORD || 'RodolfoGod02',
+    database: process.env.DB_NAME || 'Taller4O'
   });
+  
   
   export const getAll = (req: any, res: any) => {
     connection.query('SELECT * FROM productos', (error, results) => {
