@@ -1,8 +1,11 @@
 import { Router } from "express";
-import { getAll } from "../controladores/productos.controller";
+import { getBD, insertBD, updateBD, deleteBD } from "../controladores/productos.controller";
 
 const router = Router();
 
-router.get("/", getAll);
+router.get("/", getBD);
+router.post("/", insertBD);
+router.put("/:id", updateBD)
+router.delete("/:id", deleteBD)
 
 export default router;
